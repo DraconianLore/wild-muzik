@@ -5,30 +5,29 @@ using UnityEngine;
 public class hideanimals : MonoBehaviour {
 
     public SpriteRenderer hider;
+
     // Use this for initialization
     void Start()
     {
-        
-       
 
     }
     public void Hidethem()
     {
+        StopAllCoroutines();
         hider = GetComponent<SpriteRenderer>();
         hider.enabled = true;
         StartCoroutine(countdown());
+   
     }
+
     IEnumerator countdown()
     {
-
         yield return new WaitForSeconds(3);
         hider.enabled = false;
-
     }
 
-// Update is called once per frame
-void Update () {
-		
+    // Update is called once per frame
+    void Update () {
 	}
 
 }
